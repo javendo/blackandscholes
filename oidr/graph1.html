@@ -1,0 +1,30 @@
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Time', '10.58.182.234:[80]', '10.58.182.235:[80]', '10.58.182.236:[80]', '10.58.182.237:[80]', '10.58.182.238:[80]', '10.58.182.239:[80]', '10.58.182.240:[80]', '10.58.182.241:[80]', '10.58.182.242:[80]', '10.58.182.243:[80]'],
+          ['1',150,150,150,150,150,150,150,150,150,150],['2',100,99,97,98,98,99,99,99,98,99],['3',499,500,499,501,499,500,500,499,500,500],['4',452,454,451,451,452,454,452,453,454,453],['5',301,299,301,300,302,300,301,301,300,299]
+        ]);
+
+        var options = {
+            title: "Requests per machine",
+            width: 1600, height: 800,
+            vAxis: {title: "Machines"},
+            hAxis: {title: "Requests each 100 second"}
+        }
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 1600px; height: 800px;"></div>
+  </body>
+</html>
+
